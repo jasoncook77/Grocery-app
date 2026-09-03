@@ -1,5 +1,11 @@
 const STORAGE_KEY = "grocery-list-items";
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js");
+  });
+}
+
 const form = document.getElementById("add-form");
 const input = document.getElementById("item-input");
 const list = document.getElementById("list");
