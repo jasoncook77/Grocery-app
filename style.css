@@ -1,0 +1,160 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f6f5;
+  --card: #ffffff;
+  --text: #1f2a24;
+  --muted: #8b978f;
+  --accent: #2f9e44;
+  --border: #e1e6e3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.app {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 28px 24px 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.add-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.add-form input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.add-form button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.add-form button:hover {
+  background: #268a3a;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.list-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.list-item span {
+  flex: 1;
+  word-break: break-word;
+}
+
+.list-item .delete-btn {
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+
+.list-item .delete-btn:hover {
+  color: #d9480f;
+}
+
+.list-item.checked {
+  background: #eef1ef;
+  opacity: 0.6;
+}
+
+.list-item.checked span {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.empty-message {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+.empty-message[hidden] {
+  display: none;
+}
+
+.fireworks {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.fireworks[hidden] {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141815;
+    --card: #1e2420;
+    --text: #eef1ef;
+    --muted: #8b978f;
+    --border: #2c332e;
+  }
+
+  .list-item.checked {
+    background: #262d28;
+  }
+}
